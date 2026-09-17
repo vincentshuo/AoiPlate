@@ -1,111 +1,194 @@
-# AoiPlate 1.2（macOS）操作手册
+<a id="readme-top"></a>
 
-AoiPlate 是一款极简、轻量的菜单栏待办应用。  
-你可以在任意界面通过双击触发键（默认 `J`）呼出“爆炸舞台”，用盘子直接管理任务。
+<div align="center">
+  <a href="https://github.com/v6582374-netizen/AoiPlate">
+    <img src="assets/icons/AoiPlate.png" alt="AoiPlate icon" width="96" height="96">
+  </a>
 
-## 1. 核心特性
-- 全局双击 `J` 打开/收起舞台
-- 舞台打开时显示 Dock 图标，收起后自动隐藏 Dock 图标
-- 盘子尺寸整体放大，最小盘子半径较上一版提升到约 2 倍
-- 盘子大小按时间权重自动变化（越早创建越大）
-- `Cmd + 单击` 盘子：标记完成并淡出
-- 双击盘子：短文本原位编辑，长文本弹出“盘子旁圆角编辑窗”
-- 新增输入栏与旁路编辑窗升级为更精致的极繁视觉风格
-- 中文输入法组合输入时，回车优先用于输入确认，不会误触发保存
-- 右键盘子：删除
-- 按 `N`：在舞台底部打开新增输入栏
-- 按 `M`：切换爆炸模式 / 列表模式
-- 列表模式支持实时搜索未完成任务，长文本支持自动换行
+  <h1 align="center">AoiPlate</h1>
 
-## 2. 普通用户安装（推荐）
-1. 从 GitHub Release 下载 `AoiPlate.dmg`
-2. 双击打开 DMG
-3. 将 `AoiPlate.app` 拖到 `Applications`
-4. 从“应用程序”中启动 `AoiPlate`
+  <p align="center">
+    A macOS menu-bar todo app that brings your tasks onto a tactile, full-screen plate stage.
+    <br />
+    <br />
+    <a href="https://github.com/v6582374-netizen/AoiPlate/releases"><strong>Download for macOS »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/v6582374-netizen/AoiPlate/releases">Releases</a>
+    &middot;
+    <a href="https://github.com/v6582374-netizen/AoiPlate/issues/new?labels=bug">Report a bug</a>
+    &middot;
+    <a href="https://github.com/v6582374-netizen/AoiPlate/issues/new?labels=enhancement">Request a feature</a>
+  </p>
 
-备用包：
-- `AoiPlate.app.zip`：解压后得到 `.app`
-- `AoiPlate-macos-arm64.tar.gz`：终端用户使用
+  [![Latest release][release-shield]][release-url]
+  [![macOS 14+][macos-shield]][release-url]
+  [![MIT License][license-shield]][license-url]
+</div>
 
-## 3. 首次启动与权限
-如果双击 `J` 没反应，请在系统隐私设置中开启：
-- 输入监听
-- 辅助功能
+<details>
+  <summary>Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About the project</a></li>
+    <li><a href="#getting-started">Getting started</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#data-and-permissions">Data and permissions</a></li>
+    <li><a href="#development">Development</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-可通过菜单栏图标菜单中的“打开权限设置”快速跳转。
-若你暂时不想看到权限提示，可以点提示条左上角 `×` 关闭（本次运行有效，重启后若仍缺权限会再次提示）。
+## About the project
 
-## 4. 日常使用
-### 4.1 打开/关闭舞台
-- 双击 `J`
-- 或菜单栏点击“显示 / 隐藏 AoiPlate”
-- `Esc` 或点击空白处也可收起
+<p align="center">
+  <img src="plate.png" alt="The ceramic plate texture that gives AoiPlate its visual language" width="420">
+</p>
 
-### 4.2 新增任务
-- 舞台中按 `N`
-- 底部输入栏输入内容
-- 回车保存（或点“保存”）
+Most todo apps confine work to a list. AoiPlate keeps the list out of sight until you need it: double-press the trigger key from anywhere in macOS and a transparent stage opens over the desktop. Each task becomes a plate whose size reflects its age, so the work that has been waiting longest carries more visual weight.
 
-### 4.3 完成任务
-- 按住 `Cmd` 单击盘子
-- 盘子 700ms 左右淡出，剩余任务自动重排
+- Open or dismiss the stage with a double press of `J` by default.
+- Add, edit, complete, and delete tasks directly on the stage.
+- Switch to a searchable list when you need a denser view.
+- Run quietly from the menu bar and launch automatically at login.
 
-### 4.4 编辑任务
-- 双击盘子进入编辑
-- 若文本较长且盘子内显示不全，会在盘子旁弹出圆角编辑框
-- `Enter` 保存，`Esc` 取消
+### Built with
 
-### 4.5 列表模式与搜索
-- 按 `M` 进入列表模式
-- 右上角搜索框实时过滤“未完成任务”
-- 再按 `M` 返回爆炸模式
+- [Rust][rust-url]
+- [Tao][tao-url]
+- [Wry][wry-url]
+- [macOS Core Graphics][core-graphics-url]
 
-## 5. 数据存储与迁移
-数据目录：
-- `~/Library/Application Support/AoiPlate/todos.json`
-- `~/Library/Application Support/AoiPlate/config.json`
-- `~/Library/Application Support/AoiPlate/error.log`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-旧版本 `TodoLite` 目录会在首次启动时自动迁移到 `AoiPlate`。
+## Getting started
 
-## 6. 常见问题
-### Q1：双击 `J` 无反应
-- 检查输入监听/辅助功能权限
-- 检查菜单栏图标是否存在（应用是否在运行）
+### Prerequisites
 
-### Q2：下载后双击 `AoiPlate-macos-arm64` 报“UTF-8 文本编码不适用”
-- 这是 CLI 二进制，不是 Finder 双击启动的 GUI 包
-- 请改用 `AoiPlate.dmg` 或 `AoiPlate.app.zip`
+- A Mac running macOS 14 or later.
+- Permission to enable **Input Monitoring** and **Accessibility** for AoiPlate. These permissions let the app detect its global trigger and reliably show its stage.
 
-### Q3：任务看不到
-- 先按 `N` 新建一个任务
-- 或按 `M` 看列表模式是否有任务
+### Installation
 
-## 7. 开发与构建
-```bash
+1. Download `AoiPlate.dmg` from the [latest release][release-url].
+2. Open the DMG and drag `AoiPlate.app` into **Applications**.
+3. Open **AoiPlate** from Applications. It appears in the menu bar.
+4. When macOS asks, allow **Input Monitoring** and **Accessibility**. The menu-bar menu can open the relevant System Settings panes again if needed.
+
+`AoiPlate.app.zip` is an equivalent app bundle. `AoiPlate-macos-arm64.tar.gz` contains the command-line binary and is not intended to be opened in Finder.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Usage
+
+| Action | How |
+| --- | --- |
+| Show or hide the stage | Double-press `J`, or choose **Show / Hide AoiPlate** from the menu bar. Press `Esc` or click the backdrop to dismiss it. |
+| Add a task | Press `N`, enter text in the bottom input, then press `Enter` or select **Save**. |
+| Complete a task | Hold `Cmd` and click its plate. It fades out and the remaining plates reflow. |
+| Edit a task | Double-click its plate. Short text edits in place; longer text opens in an adjacent editor. Press `Enter` to save or `Esc` to cancel. |
+| Delete a task | Right-click its plate. |
+| Search tasks | Press `M` for list view, then use the search field to filter open tasks. Press `M` again to return to the plate stage. |
+
+The app handles composition input from Chinese IMEs: `Enter` first confirms an active composition and only saves after composition has completed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Data and permissions
+
+Your tasks and settings stay on the Mac, in `~/Library/Application Support/AoiPlate/`:
+
+- `todos.json` — task data
+- `config.json` — trigger key and application preferences
+- `error.log` — diagnostic log
+
+On first launch, AoiPlate migrates data from the previous `TodoLite` application directory when it exists.
+
+If the global `J` shortcut does nothing, confirm that AoiPlate is still running in the menu bar and re-enable both Input Monitoring and Accessibility in System Settings.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Development
+
+### Prerequisites
+
+- macOS 14 or later
+- A current Rust toolchain with Cargo
+- Xcode Command Line Tools
+
+Clone and build the project:
+
+```sh
+git clone https://github.com/v6582374-netizen/AoiPlate.git
+cd AoiPlate
 cargo check
 cargo build --release
+```
+
+Create the macOS app bundle:
+
+```sh
 cargo bundle --release
 ```
 
-推荐虚拟环境：
-```bash
-brew install mise direnv
-cd /Users/shiwen/Desktop/Todo_lite
-mise trust .mise.toml
-direnv allow
-```
+Build all release assets, including the DMG, app ZIP, ARM64 archive, and SHA-256 checksums:
 
-## 8. 生成 1.2 Release 资产
-一键构建：
-```bash
+```sh
 ./scripts/build_release_assets_macos.sh
 ```
 
-产物位于 `dist/`：
-- `AoiPlate.dmg`（主安装包）
-- `AoiPlate.app.zip`
-- `AoiPlate-macos-arm64.tar.gz`
-- `SHA256SUMS.txt`
+Artifacts are written to `dist/`.
 
-发布到 GitHub Release 时，建议将版本号设置为：`v1.2.0`。
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Roadmap
+
+See the [open issues][issues-url] for proposed work and known problems.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Contributing
+
+Contributions are welcome. Please open an issue first for substantial changes so the interaction model stays coherent.
+
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feature/your-change`.
+3. Make and verify your change with `cargo check`.
+4. Commit, push, and open a pull request.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## License
+
+Distributed under the [MIT License][license-url]. See [LICENSE](LICENSE) for details.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Contact
+
+Project home: [github.com/v6582374-netizen/AoiPlate](https://github.com/v6582374-netizen/AoiPlate)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Acknowledgments
+
+- [othneildrew/Best-README-Template](https://github.com/othneildrew/Best-README-Template) for the README structure.
+- [Choose an Open Source License](https://choosealicense.com)
+- [Shields.io](https://shields.io)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Markdown reference links -->
+[release-shield]: https://img.shields.io/github/v/release/v6582374-netizen/AoiPlate?style=for-the-badge&label=release
+[release-url]: https://github.com/v6582374-netizen/AoiPlate/releases/latest
+[macos-shield]: https://img.shields.io/badge/macOS-14%2B-000000?style=for-the-badge&logo=apple&logoColor=white
+[license-shield]: https://img.shields.io/badge/license-MIT-2ea44f?style=for-the-badge
+[license-url]: https://github.com/v6582374-netizen/AoiPlate/blob/main/LICENSE
+[issues-url]: https://github.com/v6582374-netizen/AoiPlate/issues
+[rust-url]: https://www.rust-lang.org/
+[tao-url]: https://github.com/tauri-apps/tao
+[wry-url]: https://github.com/tauri-apps/wry
+[core-graphics-url]: https://developer.apple.com/documentation/coregraphics
