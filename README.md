@@ -1,7 +1,7 @@
 <a id="readme-top"></a>
 
 <div align="center">
-  <a href="https://github.com/v6582374-netizen/AoiPlate">
+  <a href="https://github.com/vincentshuo/AoiPlate">
     <img src="assets/icons/AoiPlate.png" alt="AoiPlate icon" width="96" height="96">
   </a>
 
@@ -11,14 +11,14 @@
     A macOS menu-bar todo app that brings your tasks onto a tactile, full-screen plate stage.
     <br />
     <br />
-    <a href="https://github.com/v6582374-netizen/AoiPlate/releases"><strong>Download for macOS »</strong></a>
+    <a href="https://github.com/vincentshuo/AoiPlate/releases"><strong>Download for macOS »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/v6582374-netizen/AoiPlate/releases">Releases</a>
+    <a href="https://github.com/vincentshuo/AoiPlate/releases">Releases</a>
     &middot;
-    <a href="https://github.com/v6582374-netizen/AoiPlate/issues/new?labels=bug">Report a bug</a>
+    <a href="https://github.com/vincentshuo/AoiPlate/issues/new?labels=bug">Report a bug</a>
     &middot;
-    <a href="https://github.com/v6582374-netizen/AoiPlate/issues/new?labels=enhancement">Request a feature</a>
+    <a href="https://github.com/vincentshuo/AoiPlate/issues/new?labels=enhancement">Request a feature</a>
   </p>
 
   [![Latest release][release-shield]][release-url]
@@ -122,7 +122,7 @@ If the global `J` shortcut does nothing, confirm that AoiPlate is still running 
 Clone and build the project:
 
 ```sh
-git clone https://github.com/v6582374-netizen/AoiPlate.git
+git clone https://github.com/vincentshuo/AoiPlate.git
 cd AoiPlate
 cargo check
 cargo build --release
@@ -169,7 +169,7 @@ Distributed under the [MIT License][license-url]. See [LICENSE](LICENSE) for det
 
 ## Contact
 
-Project home: [github.com/v6582374-netizen/AoiPlate](https://github.com/v6582374-netizen/AoiPlate)
+Project home: [github.com/vincentshuo/AoiPlate](https://github.com/vincentshuo/AoiPlate)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -182,12 +182,12 @@ Project home: [github.com/v6582374-netizen/AoiPlate](https://github.com/v6582374
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Markdown reference links -->
-[release-shield]: https://img.shields.io/github/v/release/v6582374-netizen/AoiPlate?style=for-the-badge&label=release
-[release-url]: https://github.com/v6582374-netizen/AoiPlate/releases/latest
+[release-shield]: https://img.shields.io/github/v/release/vincentshuo/AoiPlate?style=for-the-badge&label=release
+[release-url]: https://github.com/vincentshuo/AoiPlate/releases/latest
 [macos-shield]: https://img.shields.io/badge/macOS-14%2B-000000?style=for-the-badge&logo=apple&logoColor=white
 [license-shield]: https://img.shields.io/badge/license-MIT-2ea44f?style=for-the-badge
-[license-url]: https://github.com/v6582374-netizen/AoiPlate/blob/main/LICENSE
-[issues-url]: https://github.com/v6582374-netizen/AoiPlate/issues
+[license-url]: https://github.com/vincentshuo/AoiPlate/blob/main/LICENSE
+[issues-url]: https://github.com/vincentshuo/AoiPlate/issues
 [rust-url]: https://www.rust-lang.org/
 [tao-url]: https://github.com/tauri-apps/tao
 [wry-url]: https://github.com/tauri-apps/wry
